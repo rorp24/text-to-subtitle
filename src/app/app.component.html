@@ -2,14 +2,39 @@
   <div class="container">
     <div class="grid">
       <div class="input half">
-        <h1>Text to Subtitle</h1>
+        <h2>Text to Subtitle</h2>
+        <div class="parameters grid">
+          <div class="half">
+            <div>
+              <label for="removeTitles">Remove titles</label>
+              <input type="checkbox" name="removeTitles" [(ngModel)]="parameters.removeTitles">
+            </div>
+            <div>
+              <label for="removeParenthesis">Remove parenthesis</label>
+              <input type="checkbox" name="removeParenthesis" [(ngModel)]="parameters.removeParenthesis">
+            </div>
+            <div>
+              <label for="removePunctuation">Remove punctuation</label>
+              <input type="checkbox" name="removePunctuation" [(ngModel)]="parameters.removePunctuation">
+            </div>
+          </div>
+          <div class="half">
+            <div>
+              <label for="maxCharPerSeconds">Characters per seconds</label>
+              <input type="number" name="CharPerSeconds" [(ngModel)]="parameters.CharPerSeconds">
+            </div>
+            <div>
+              <label for="maxWordsPerSubtitles">Max words per subtitles</label>
+              <input type="number" name="maxWordsPerSubtitles" [(ngModel)]="parameters.maxWordsPerSubtitles">
+            </div>
+          </div>
+        </div>
+        <angular-editor [(ngModel)]="textToConvert" [config]="editorConfig"></angular-editor>
         <button class="btn btn-primary" (click)="Convert()">Convert</button>
       </div>
       <div class="output half">
-        <h1>preview</h1>
-        <textarea name="editablePreview" id="editablePreview" class="form-control">
-          {{previewText}}
-        </textarea>
+        <h2>Editable preview</h2>
+        <textarea name="editablePreview" id="editablePreview" class="form-control">{{previewText}}</textarea>
         <button class="btn btn-primary">Download subtitle.srt</button>
       </div>
     </div>
