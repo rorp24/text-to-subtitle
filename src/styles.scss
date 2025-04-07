@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+.grid {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    .full {
+        grid-column: span 4;
+    }
+
+    .half {
+        grid-column: span 2;
+    }
+
+    .small {
+        grid-column: span 1;
+    }
+}
